@@ -6,7 +6,7 @@ Disassembly of section .text:
 
 00100000 <_start>:
   100000:	bd 00 00 00 00       	mov    $0x0,%ebp
-  100005:	bc 00 50 1f 00       	mov    $0x1f5000,%esp
+  100005:	bc 00 60 1f 00       	mov    $0x1f6000,%esp
   10000a:	e8 99 09 00 00       	call   1009a8 <_trm_init>
   10000f:	90                   	nop
 
@@ -73,7 +73,7 @@ Disassembly of section .text:
   1000b1:	8b 45 0c             	mov    0xc(%ebp),%eax
   1000b4:	8b 5d 10             	mov    0x10(%ebp),%ebx
   1000b7:	8d 0c 18             	lea    (%eax,%ebx,1),%ecx
-  1000ba:	ba 64 1e 1e 00       	mov    $0x1e1e64,%edx
+  1000ba:	ba 64 30 1e 00       	mov    $0x1e3064,%edx
   1000bf:	81 ea 64 24 10 00    	sub    $0x102464,%edx
   1000c5:	39 d1                	cmp    %edx,%ecx
   1000c7:	77 17                	ja     1000e0 <ramdisk_read+0x34>
@@ -106,7 +106,7 @@ Disassembly of section .text:
   10010d:	8b 45 0c             	mov    0xc(%ebp),%eax
   100110:	8b 5d 10             	mov    0x10(%ebp),%ebx
   100113:	8d 0c 18             	lea    (%eax,%ebx,1),%ecx
-  100116:	ba 64 1e 1e 00       	mov    $0x1e1e64,%edx
+  100116:	ba 64 30 1e 00       	mov    $0x1e3064,%edx
   10011b:	81 ea 64 24 10 00    	sub    $0x102464,%edx
   100121:	39 d1                	cmp    %edx,%ecx
   100123:	77 17                	ja     10013c <ramdisk_write+0x34>
@@ -135,10 +135,10 @@ Disassembly of section .text:
   100164:	55                   	push   %ebp
   100165:	89 e5                	mov    %esp,%ebp
   100167:	83 ec 0c             	sub    $0xc,%esp
-  10016a:	b8 64 1e 1e 00       	mov    $0x1e1e64,%eax
+  10016a:	b8 64 30 1e 00       	mov    $0x1e3064,%eax
   10016f:	2d 64 24 10 00       	sub    $0x102464,%eax
   100174:	50                   	push   %eax
-  100175:	68 64 1e 1e 00       	push   $0x1e1e64
+  100175:	68 64 30 1e 00       	push   $0x1e3064
   10017a:	68 64 24 10 00       	push   $0x102464
   10017f:	68 d4 13 10 00       	push   $0x1013d4
   100184:	6a 1b                	push   $0x1b
@@ -212,8 +212,8 @@ Disassembly of section .text:
   100270:	55                   	push   %ebp
   100271:	89 e5                	mov    %esp,%ebp
   100273:	83 ec 08             	sub    $0x8,%esp
-  100276:	c7 05 00 30 1e 00 00 	movl   $0x1e4000,0x1e3000
-  10027d:	40 1e 00 
+  100276:	c7 05 00 40 1e 00 00 	movl   $0x1e5000,0x1e4000
+  10027d:	50 1e 00 
   100280:	68 1c 16 10 00       	push   $0x10161c
   100285:	6a 19                	push   $0x19
   100287:	68 50 15 10 00       	push   $0x101550
@@ -267,7 +267,7 @@ Disassembly of section .text:
   1002eb:	83 c4 10             	add    $0x10,%esp
   1002ee:	85 c0                	test   %eax,%eax
   1002f0:	74 32                	je     100324 <events_read+0x50>
-  1002f2:	8b 0c 85 80 1e 1e 00 	mov    0x1e1e80(,%eax,4),%ecx
+  1002f2:	8b 0c 85 80 30 1e 00 	mov    0x1e3080(,%eax,4),%ecx
   1002f9:	84 d2                	test   %dl,%dl
   1002fb:	75 1f                	jne    10031c <events_read+0x48>
   1002fd:	b8 29 16 10 00       	mov    $0x101629,%eax
@@ -376,10 +376,10 @@ Disassembly of section .text:
 001003f8 <brk_pb>:
   1003f8:	55                   	push   %ebp
   1003f9:	89 e5                	mov    %esp,%ebp
-  1003fb:	a1 00 c0 1e 00       	mov    0x1ec000,%eax
+  1003fb:	a1 00 d0 1e 00       	mov    0x1ed000,%eax
   100400:	8b 55 08             	mov    0x8(%ebp),%edx
   100403:	01 c2                	add    %eax,%edx
-  100405:	89 15 00 c0 1e 00    	mov    %edx,0x1ec000
+  100405:	89 15 00 d0 1e 00    	mov    %edx,0x1ed000
   10040b:	5d                   	pop    %ebp
   10040c:	c3                   	ret    
   10040d:	66 90                	xchg   %ax,%ax
@@ -389,11 +389,11 @@ Disassembly of section .text:
   100410:	55                   	push   %ebp
   100411:	89 e5                	mov    %esp,%ebp
   100413:	83 ec 14             	sub    $0x14,%esp
-  100416:	a1 98 25 1e 00       	mov    0x1e2598,%eax
+  100416:	a1 98 37 1e 00       	mov    0x1e3798,%eax
   10041b:	05 ff 0f 00 00       	add    $0xfff,%eax
   100420:	25 00 f0 ff ff       	and    $0xfffff000,%eax
-  100425:	a3 04 c0 1e 00       	mov    %eax,0x1ec004
-  10042a:	a3 00 c0 1e 00       	mov    %eax,0x1ec000
+  100425:	a3 04 d0 1e 00       	mov    %eax,0x1ed004
+  10042a:	a3 00 d0 1e 00       	mov    %eax,0x1ed000
   10042f:	50                   	push   %eax
   100430:	68 b0 18 10 00       	push   $0x1018b0
   100435:	6a 24                	push   $0x24
@@ -586,7 +586,7 @@ Disassembly of section .text:
   1005f5:	53                   	push   %ebx
   1005f6:	83 ec 0c             	sub    $0xc,%esp
   1005f9:	8b 7d 08             	mov    0x8(%ebp),%edi
-  1005fc:	be 80 22 1e 00       	mov    $0x1e2280,%esi
+  1005fc:	be 80 34 1e 00       	mov    $0x1e3480,%esi
   100601:	31 db                	xor    %ebx,%ebx
   100603:	eb 0c                	jmp    100611 <fs_open+0x21>
   100605:	8d 76 00             	lea    0x0(%esi),%esi
@@ -603,7 +603,7 @@ Disassembly of section .text:
   100621:	75 e5                	jne    100608 <fs_open+0x18>
   100623:	8d 04 1b             	lea    (%ebx,%ebx,1),%eax
   100626:	01 d8                	add    %ebx,%eax
-  100628:	c7 04 c5 94 22 1e 00 	movl   $0x0,0x1e2294(,%eax,8)
+  100628:	c7 04 c5 94 34 1e 00 	movl   $0x0,0x1e3494(,%eax,8)
   10062f:	00 00 00 00 
   100633:	89 d8                	mov    %ebx,%eax
   100635:	8d 65 f4             	lea    -0xc(%ebp),%esp
@@ -641,7 +641,7 @@ Disassembly of section .text:
   100666:	77 6c                	ja     1006d4 <fs_read+0x80>
   100668:	8d 34 1b             	lea    (%ebx,%ebx,1),%esi
   10066b:	8d 04 1e             	lea    (%esi,%ebx,1),%eax
-  10066e:	8d 14 c5 80 22 1e 00 	lea    0x1e2280(,%eax,8),%edx
+  10066e:	8d 14 c5 80 34 1e 00 	lea    0x1e3480(,%eax,8),%edx
   100675:	8b 42 14             	mov    0x14(%edx),%eax
   100678:	8b 52 04             	mov    0x4(%edx),%edx
   10067b:	8d 3c 08             	lea    (%eax,%ecx,1),%edi
@@ -649,8 +649,8 @@ Disassembly of section .text:
   100680:	77 36                	ja     1006b8 <fs_read+0x64>
   100682:	89 ca                	mov    %ecx,%edx
   100684:	8d 3c 1e             	lea    (%esi,%ebx,1),%edi
-  100687:	03 04 fd 88 22 1e 00 	add    0x1e2288(,%edi,8),%eax
-  10068e:	8b 3c fd 8c 22 1e 00 	mov    0x1e228c(,%edi,8),%edi
+  100687:	03 04 fd 88 34 1e 00 	add    0x1e3488(,%edi,8),%eax
+  10068e:	8b 3c fd 8c 34 1e 00 	mov    0x1e348c(,%edi,8),%edi
   100695:	85 ff                	test   %edi,%edi
   100697:	74 2b                	je     1006c4 <fs_read+0x70>
   100699:	52                   	push   %edx
@@ -660,7 +660,7 @@ Disassembly of section .text:
   10069f:	ff d7                	call   *%edi
   1006a1:	83 c4 10             	add    $0x10,%esp
   1006a4:	01 f3                	add    %esi,%ebx
-  1006a6:	01 04 dd 94 22 1e 00 	add    %eax,0x1e2294(,%ebx,8)
+  1006a6:	01 04 dd 94 34 1e 00 	add    %eax,0x1e3494(,%ebx,8)
   1006ad:	8d 65 f4             	lea    -0xc(%ebp),%esp
   1006b0:	5b                   	pop    %ebx
   1006b1:	5e                   	pop    %esi
@@ -703,7 +703,7 @@ Disassembly of section .text:
   10070a:	77 6c                	ja     100778 <fs_write+0x80>
   10070c:	8d 34 1b             	lea    (%ebx,%ebx,1),%esi
   10070f:	8d 04 1e             	lea    (%esi,%ebx,1),%eax
-  100712:	8d 14 c5 80 22 1e 00 	lea    0x1e2280(,%eax,8),%edx
+  100712:	8d 14 c5 80 34 1e 00 	lea    0x1e3480(,%eax,8),%edx
   100719:	8b 42 14             	mov    0x14(%edx),%eax
   10071c:	8b 52 04             	mov    0x4(%edx),%edx
   10071f:	8d 3c 08             	lea    (%eax,%ecx,1),%edi
@@ -711,8 +711,8 @@ Disassembly of section .text:
   100724:	77 36                	ja     10075c <fs_write+0x64>
   100726:	89 ca                	mov    %ecx,%edx
   100728:	8d 3c 1e             	lea    (%esi,%ebx,1),%edi
-  10072b:	03 04 fd 88 22 1e 00 	add    0x1e2288(,%edi,8),%eax
-  100732:	8b 3c fd 90 22 1e 00 	mov    0x1e2290(,%edi,8),%edi
+  10072b:	03 04 fd 88 34 1e 00 	add    0x1e3488(,%edi,8),%eax
+  100732:	8b 3c fd 90 34 1e 00 	mov    0x1e3490(,%edi,8),%edi
   100739:	85 ff                	test   %edi,%edi
   10073b:	74 2b                	je     100768 <fs_write+0x70>
   10073d:	52                   	push   %edx
@@ -722,7 +722,7 @@ Disassembly of section .text:
   100743:	ff d7                	call   *%edi
   100745:	83 c4 10             	add    $0x10,%esp
   100748:	01 f3                	add    %esi,%ebx
-  10074a:	01 04 dd 94 22 1e 00 	add    %eax,0x1e2294(,%ebx,8)
+  10074a:	01 04 dd 94 34 1e 00 	add    %eax,0x1e3494(,%ebx,8)
   100751:	8d 65 f4             	lea    -0xc(%ebp),%esp
   100754:	5b                   	pop    %ebx
   100755:	5e                   	pop    %esi
@@ -777,21 +777,21 @@ Disassembly of section .text:
   1007e0:	8d 14 00             	lea    (%eax,%eax,1),%edx
   1007e3:	01 c2                	add    %eax,%edx
   1007e5:	8b 45 0c             	mov    0xc(%ebp),%eax
-  1007e8:	03 04 d5 94 22 1e 00 	add    0x1e2294(,%edx,8),%eax
-  1007ef:	89 04 d5 94 22 1e 00 	mov    %eax,0x1e2294(,%edx,8)
+  1007e8:	03 04 d5 94 34 1e 00 	add    0x1e3494(,%edx,8),%eax
+  1007ef:	89 04 d5 94 34 1e 00 	mov    %eax,0x1e3494(,%edx,8)
   1007f6:	c9                   	leave  
   1007f7:	c3                   	ret    
   1007f8:	8d 14 00             	lea    (%eax,%eax,1),%edx
   1007fb:	01 d0                	add    %edx,%eax
   1007fd:	8b 4d 0c             	mov    0xc(%ebp),%ecx
-  100800:	89 0c c5 94 22 1e 00 	mov    %ecx,0x1e2294(,%eax,8)
+  100800:	89 0c c5 94 34 1e 00 	mov    %ecx,0x1e3494(,%eax,8)
   100807:	89 c8                	mov    %ecx,%eax
   100809:	c9                   	leave  
   10080a:	c3                   	ret    
   10080b:	90                   	nop
   10080c:	8d 14 00             	lea    (%eax,%eax,1),%edx
   10080f:	01 d0                	add    %edx,%eax
-  100811:	8d 14 c5 80 22 1e 00 	lea    0x1e2280(,%eax,8),%edx
+  100811:	8d 14 c5 80 34 1e 00 	lea    0x1e3480(,%eax,8),%edx
   100818:	8b 42 04             	mov    0x4(%edx),%eax
   10081b:	03 42 14             	add    0x14(%edx),%eax
   10081e:	03 45 0c             	add    0xc(%ebp),%eax
@@ -1050,10 +1050,10 @@ Disassembly of section .text:
   100a7c:	40                   	inc    %eax
   100a7d:	3d 80 00 00 00       	cmp    $0x80,%eax
   100a82:	74 1e                	je     100aa2 <ioe_init+0x32>
-  100a84:	8b 14 85 a0 25 1e 00 	mov    0x1e25a0(,%eax,4),%edx
+  100a84:	8b 14 85 a0 37 1e 00 	mov    0x1e37a0(,%eax,4),%edx
   100a8b:	85 d2                	test   %edx,%edx
   100a8d:	75 ed                	jne    100a7c <ioe_init+0xc>
-  100a8f:	c7 04 85 a0 25 1e 00 	movl   $0x100a00,0x1e25a0(,%eax,4)
+  100a8f:	c7 04 85 a0 37 1e 00 	movl   $0x100a00,0x1e37a0(,%eax,4)
   100a96:	00 0a 10 00 
   100a9a:	40                   	inc    %eax
   100a9b:	3d 80 00 00 00       	cmp    $0x80,%eax
@@ -1073,7 +1073,7 @@ Disassembly of section .text:
   100abb:	8b 45 08             	mov    0x8(%ebp),%eax
   100abe:	8b 55 0c             	mov    0xc(%ebp),%edx
   100ac1:	89 55 08             	mov    %edx,0x8(%ebp)
-  100ac4:	8b 04 85 a0 25 1e 00 	mov    0x1e25a0(,%eax,4),%eax
+  100ac4:	8b 04 85 a0 37 1e 00 	mov    0x1e37a0(,%eax,4),%eax
   100acb:	5d                   	pop    %ebp
   100acc:	ff e0                	jmp    *%eax
   100ace:	66 90                	xchg   %ax,%ax
@@ -1081,10 +1081,10 @@ Disassembly of section .text:
 00100ad0 <__am_timer_init>:
   100ad0:	ba 4c 00 00 00       	mov    $0x4c,%edx
   100ad5:	ed                   	in     (%dx),%eax
-  100ad6:	a3 0c c0 1e 00       	mov    %eax,0x1ec00c
+  100ad6:	a3 0c d0 1e 00       	mov    %eax,0x1ed00c
   100adb:	ba 48 00 00 00       	mov    $0x48,%edx
   100ae0:	ed                   	in     (%dx),%eax
-  100ae1:	a3 08 c0 1e 00       	mov    %eax,0x1ec008
+  100ae1:	a3 08 d0 1e 00       	mov    %eax,0x1ed008
   100ae6:	c3                   	ret    
   100ae7:	90                   	nop
 
@@ -1096,7 +1096,7 @@ Disassembly of section .text:
   100af1:	89 c1                	mov    %eax,%ecx
   100af3:	ba 48 00 00 00       	mov    $0x48,%edx
   100af8:	ed                   	in     (%dx),%eax
-  100af9:	2b 0d 0c c0 1e 00    	sub    0x1ec00c,%ecx
+  100af9:	2b 0d 0c d0 1e 00    	sub    0x1ed00c,%ecx
   100aff:	8d 14 89             	lea    (%ecx,%ecx,4),%edx
   100b02:	8d 14 92             	lea    (%edx,%edx,4),%edx
   100b05:	8d 14 92             	lea    (%edx,%edx,4),%edx
@@ -1104,7 +1104,7 @@ Disassembly of section .text:
   100b0b:	8d 14 92             	lea    (%edx,%edx,4),%edx
   100b0e:	8d 14 92             	lea    (%edx,%edx,4),%edx
   100b11:	c1 e2 06             	shl    $0x6,%edx
-  100b14:	2b 05 08 c0 1e 00    	sub    0x1ec008,%eax
+  100b14:	2b 05 08 d0 1e 00    	sub    0x1ed008,%eax
   100b1a:	8d 94 02 f4 01 00 00 	lea    0x1f4(%edx,%eax,1),%edx
   100b21:	8b 45 08             	mov    0x8(%ebp),%eax
   100b24:	89 10                	mov    %edx,(%eax)
@@ -1147,11 +1147,11 @@ Disassembly of section .text:
   100b84:	ba 00 01 00 00       	mov    $0x100,%edx
   100b89:	66 ed                	in     (%dx),%ax
   100b8b:	0f b7 c0             	movzwl %ax,%eax
-  100b8e:	a3 10 c0 1e 00       	mov    %eax,0x1ec010
+  100b8e:	a3 10 d0 1e 00       	mov    %eax,0x1ed010
   100b93:	ba 02 01 00 00       	mov    $0x102,%edx
   100b98:	66 ed                	in     (%dx),%ax
   100b9a:	0f b7 c0             	movzwl %ax,%eax
-  100b9d:	a3 14 c0 1e 00       	mov    %eax,0x1ec014
+  100b9d:	a3 14 d0 1e 00       	mov    %eax,0x1ed014
   100ba2:	c3                   	ret    
   100ba3:	90                   	nop
 
@@ -1191,9 +1191,9 @@ Disassembly of section .text:
   100bf0:	8b 76 08             	mov    0x8(%esi),%esi
   100bf3:	85 c9                	test   %ecx,%ecx
   100bf5:	7e 71                	jle    100c68 <__am_gpu_fbdraw+0x94>
-  100bf7:	8b 3d 10 c0 1e 00    	mov    0x1ec010,%edi
+  100bf7:	8b 3d 10 d0 1e 00    	mov    0x1ed010,%edi
   100bfd:	89 7d f0             	mov    %edi,-0x10(%ebp)
-  100c00:	8b 3d 14 c0 1e 00    	mov    0x1ec014,%edi
+  100c00:	8b 3d 14 d0 1e 00    	mov    0x1ed014,%edi
   100c06:	89 7d ec             	mov    %edi,-0x14(%ebp)
   100c09:	c1 e7 02             	shl    $0x2,%edi
   100c0c:	89 7d e0             	mov    %edi,-0x20(%ebp)
@@ -1312,7 +1312,7 @@ Disassembly of section .text:
   100cfc:	ed                   	in     (%dx),%eax
   100cfd:	85 f6                	test   %esi,%esi
   100cff:	74 28                	je     100d29 <__am_audio_play+0x41>
-  100d01:	8b 0d a0 27 1e 00    	mov    0x1e27a0,%ecx
+  100d01:	8b 0d a0 39 1e 00    	mov    0x1e39a0,%ecx
   100d07:	2d 00 00 80 5f       	sub    $0x5f800000,%eax
   100d0c:	89 da                	mov    %ebx,%edx
   100d0e:	01 de                	add    %ebx,%esi
@@ -1325,7 +1325,7 @@ Disassembly of section .text:
   100d1e:	42                   	inc    %edx
   100d1f:	39 d6                	cmp    %edx,%esi
   100d21:	75 ed                	jne    100d10 <__am_audio_play+0x28>
-  100d23:	89 0d a0 27 1e 00    	mov    %ecx,0x1e27a0
+  100d23:	89 0d a0 39 1e 00    	mov    %ecx,0x1e39a0
   100d29:	5b                   	pop    %ebx
   100d2a:	5e                   	pop    %esi
   100d2b:	5d                   	pop    %ebp
@@ -1339,7 +1339,7 @@ Disassembly of section .text:
   100d33:	53                   	push   %ebx
   100d34:	83 ec 14             	sub    $0x14,%esp
   100d37:	8b 45 08             	mov    0x8(%ebp),%eax
-  100d3a:	8b 0d 20 c8 1e 00    	mov    0x1ec820,%ecx
+  100d3a:	8b 0d 20 d8 1e 00    	mov    0x1ed820,%ecx
   100d40:	85 c9                	test   %ecx,%ecx
   100d42:	74 4d                	je     100d91 <__am_irq_handle+0x61>
   100d44:	31 db                	xor    %ebx,%ebx
@@ -1395,41 +1395,41 @@ Disassembly of section .text:
   100dd9:	89 c1                	mov    %eax,%ecx
   100ddb:	31 c0                	xor    %eax,%eax
   100ddd:	8d 76 00             	lea    0x0(%esi),%esi
-  100de0:	66 89 14 c5 20 c0 1e 	mov    %dx,0x1ec020(,%eax,8)
+  100de0:	66 89 14 c5 20 d0 1e 	mov    %dx,0x1ed020(,%eax,8)
   100de7:	00 
-  100de8:	c7 04 c5 22 c0 1e 00 	movl   $0x8f000008,0x1ec022(,%eax,8)
+  100de8:	c7 04 c5 22 d0 1e 00 	movl   $0x8f000008,0x1ed022(,%eax,8)
   100def:	08 00 00 8f 
-  100df3:	66 89 0c c5 26 c0 1e 	mov    %cx,0x1ec026(,%eax,8)
+  100df3:	66 89 0c c5 26 d0 1e 	mov    %cx,0x1ed026(,%eax,8)
   100dfa:	00 
   100dfb:	40                   	inc    %eax
   100dfc:	3d 00 01 00 00       	cmp    $0x100,%eax
   100e01:	75 dd                	jne    100de0 <cte_init+0x14>
   100e03:	b8 95 0e 10 00       	mov    $0x100e95,%eax
-  100e08:	66 a3 20 c1 1e 00    	mov    %ax,0x1ec120
-  100e0e:	c7 05 22 c1 1e 00 08 	movl   $0x8e000008,0x1ec122
+  100e08:	66 a3 20 d1 1e 00    	mov    %ax,0x1ed120
+  100e0e:	c7 05 22 d1 1e 00 08 	movl   $0x8e000008,0x1ed122
   100e15:	00 00 8e 
   100e18:	c1 e8 10             	shr    $0x10,%eax
-  100e1b:	66 a3 26 c1 1e 00    	mov    %ax,0x1ec126
+  100e1b:	66 a3 26 d1 1e 00    	mov    %ax,0x1ed126
   100e21:	b8 87 0e 10 00       	mov    $0x100e87,%eax
-  100e26:	66 a3 20 c4 1e 00    	mov    %ax,0x1ec420
-  100e2c:	c7 05 22 c4 1e 00 08 	movl   $0xef000008,0x1ec422
+  100e26:	66 a3 20 d4 1e 00    	mov    %ax,0x1ed420
+  100e2c:	c7 05 22 d4 1e 00 08 	movl   $0xef000008,0x1ed422
   100e33:	00 00 ef 
   100e36:	c1 e8 10             	shr    $0x10,%eax
-  100e39:	66 a3 26 c4 1e 00    	mov    %ax,0x1ec426
+  100e39:	66 a3 26 d4 1e 00    	mov    %ax,0x1ed426
   100e3f:	b8 8e 0e 10 00       	mov    $0x100e8e,%eax
-  100e44:	66 a3 28 c4 1e 00    	mov    %ax,0x1ec428
-  100e4a:	c7 05 2a c4 1e 00 08 	movl   $0x8f000008,0x1ec42a
+  100e44:	66 a3 28 d4 1e 00    	mov    %ax,0x1ed428
+  100e4a:	c7 05 2a d4 1e 00 08 	movl   $0x8f000008,0x1ed42a
   100e51:	00 00 8f 
   100e54:	c1 e8 10             	shr    $0x10,%eax
-  100e57:	66 a3 2e c4 1e 00    	mov    %ax,0x1ec42e
-  100e5d:	66 c7 05 18 c0 1e 00 	movw   $0x800,0x1ec018
+  100e57:	66 a3 2e d4 1e 00    	mov    %ax,0x1ed42e
+  100e5d:	66 c7 05 18 d0 1e 00 	movw   $0x800,0x1ed018
   100e64:	00 08 
-  100e66:	c7 05 1a c0 1e 00 20 	movl   $0x1ec020,0x1ec01a
-  100e6d:	c0 1e 00 
-  100e70:	b8 18 c0 1e 00       	mov    $0x1ec018,%eax
+  100e66:	c7 05 1a d0 1e 00 20 	movl   $0x1ed020,0x1ed01a
+  100e6d:	d0 1e 00 
+  100e70:	b8 18 d0 1e 00       	mov    $0x1ed018,%eax
   100e75:	0f 01 18             	lidtl  (%eax)
   100e78:	8b 45 08             	mov    0x8(%ebp),%eax
-  100e7b:	a3 20 c8 1e 00       	mov    %eax,0x1ec820
+  100e7b:	a3 20 d8 1e 00       	mov    %eax,0x1ed820
   100e80:	b0 01                	mov    $0x1,%al
   100e82:	5d                   	pop    %ebp
   100e83:	c3                   	ret    
@@ -1525,12 +1525,12 @@ Disassembly of section .text:
   100f30:	8d 42 04             	lea    0x4(%edx),%eax
   100f33:	89 45 dc             	mov    %eax,-0x24(%ebp)
   100f36:	8b 1a                	mov    (%edx),%ebx
-  100f38:	c6 05 63 c8 1e 00 00 	movb   $0x0,0x1ec863
+  100f38:	c6 05 63 d8 1e 00 00 	movb   $0x0,0x1ed863
   100f3f:	85 db                	test   %ebx,%ebx
   100f41:	0f 88 e5 00 00 00    	js     10102c <vsnprintf+0x178>
   100f47:	0f 85 33 01 00 00    	jne    101080 <vsnprintf+0x1cc>
-  100f4d:	c6 05 62 c8 1e 00 30 	movb   $0x30,0x1ec862
-  100f54:	bb 62 c8 1e 00       	mov    $0x1ec862,%ebx
+  100f4d:	c6 05 62 d8 1e 00 30 	movb   $0x30,0x1ed862
+  100f54:	bb 62 d8 1e 00       	mov    $0x1ed862,%ebx
   100f59:	83 ec 0c             	sub    $0xc,%esp
   100f5c:	53                   	push   %ebx
   100f5d:	e8 c6 01 00 00       	call   101128 <strlen>
@@ -1612,7 +1612,7 @@ Disassembly of section .text:
   101027:	e9 bb fe ff ff       	jmp    100ee7 <vsnprintf+0x33>
   10102c:	f7 db                	neg    %ebx
   10102e:	c7 45 e0 01 00 00 00 	movl   $0x1,-0x20(%ebp)
-  101035:	b9 63 c8 1e 00       	mov    $0x1ec863,%ecx
+  101035:	b9 63 d8 1e 00       	mov    $0x1ed863,%ecx
   10103a:	89 75 d8             	mov    %esi,-0x28(%ebp)
   10103d:	89 7d d4             	mov    %edi,-0x2c(%ebp)
   101040:	89 ce                	mov    %ecx,%esi
