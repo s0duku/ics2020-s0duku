@@ -4,7 +4,7 @@ This project is the programming assignment of the class ICS(Introduction to Comp
 in Department of Computer Science and Technology, Nanjing University.
 
 For the guide of this programming assignment,
-refer to http://nju-ics.gitbooks.io/ics2020-programming-assignment/content/
+refer to https://nju-projectn.github.io/ics-pa-gitbook/ics2020/
 
 To initialize, run
 ```bash
@@ -21,7 +21,7 @@ The following subprojects/components are included. Some of them are not fully im
 
 # Personal Progress
 
-[Notion about this proj](https://tough-close-477.notion.site/PA-775201eea91a49538eb2979f439678d5)
+[Notion about this proj https://tough-close-477.notion.site/PA-775201eea91a49538eb2979f439678d5](https://tough-close-477.notion.site/PA-775201eea91a49538eb2979f439678d5)
 
 ![1](https://raw.githubusercontent.com/s0duku/ics2020-s0duku/main/examples/1.png)  
 ![1](https://raw.githubusercontent.com/s0duku/ics2020-s0duku/main/examples/2.png)   
