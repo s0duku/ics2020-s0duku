@@ -6,6 +6,10 @@ in Department of Computer Science and Technology, Nanjing University.
 For the guide of this programming assignment,
 refer to https://nju-projectn.github.io/ics-pa-gitbook/ics2020/
 
+Forked from https://github.com/NJU-ProjectN/ics-pa 
+
+Follow are my personal implementation
+
 To initialize, run
 ```bash
 bash init-s0duku.sh
