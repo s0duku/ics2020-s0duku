@@ -32,7 +32,7 @@ int main() {
   Log("Finish initialization");
 
   
-  naive_uload(NULL, "/bin/event-test");
+  naive_uload(NULL, "/bin/nterm");
   naive_uload(NULL, "/bin/hello");
   
 
