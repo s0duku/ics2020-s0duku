@@ -25,7 +25,7 @@ The following subprojects/components are included. Some of them are not fully im
 
 # Personal Progress
 
-[Notion about this proj https://tough-close-477.notion.site/PA-775201eea91a49538eb2979f439678d5](https://tough-close-477.notion.site/PA-775201eea91a49538eb2979f439678d5)
+[Notion About This Proj ](https://tough-close-477.notion.site/PA-775201eea91a49538eb2979f439678d5)
 
 ![1](https://raw.githubusercontent.com/s0duku/ics2020-s0duku/main/examples/1.png)  
 ![1](https://raw.githubusercontent.com/s0duku/ics2020-s0duku/main/examples/2.png)   

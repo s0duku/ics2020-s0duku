@@ -32,8 +32,7 @@ int main() {
   Log("Finish initialization");
 
   
-  naive_uload(NULL, "/bin/menu");
-  naive_uload(NULL, "/bin/hello");
+  naive_uload(NULL, "/bin/nterm");
   
 
 #ifdef HAS_CTE
