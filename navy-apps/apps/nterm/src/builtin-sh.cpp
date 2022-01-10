@@ -22,6 +22,17 @@ static void sh_prompt() {
   sh_printf("sh> ");
 }
 
+static void cmd_strip(char * cmd){
+  size_t len = strlen(cmd);
+  for(size_t idx=len-1;idx >= 0;idx--){
+    if(cmd[idx] == '\n' || cmd[idx] == ' ' || cmd[idx] == '\t'){
+      cmd[idx] = 0;
+    }else{
+      break;
+    }
+  }
+}
+
 static void sh_handle_cmd(const char *cmd) {
   printf("%d\n",strlen(cmd));
   execve(cmd,NULL,NULL);
