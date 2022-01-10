@@ -43,7 +43,7 @@ void do_syscall(Context *c) {
       naive_uload(NULL,(char*)a[1]);
       break;
     case SYS_exit:
-      halt(0);break;
+      naive_uload(NULL,"/bin/nterm");break;
     default: 
       panic("Unhandled syscall ID = %d", a[0]);
   }
